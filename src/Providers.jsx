@@ -2,11 +2,16 @@
 
 // need to be in client to use useState
 // once using context (theme, setTheme) - don't have to be in a client component necessarily
+// Add as many providers as needed
 
 "use client";
 
 import { ThemeProvider } from "./context/ThemeContext";
 
-export function Providers(){
-    
+export function Providers(children){
+    return (
+        <ThemeProvider>
+            {children}
+        </ThemeProvider>
+    )
 }
